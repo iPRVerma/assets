@@ -1,0 +1,7 @@
+.zscustom-section-tourism-footer .zptext { color: #7B7B7B; }
+.zscustom-section-tourism-footer .zpheading { color: #E2E2E2; }
+.zscustom-section-tourism-footer .zplink-heading { color: #E2E2E2; font-size: 24px; }
+.zscustom-section-tourism-footer .zplink-text { color: #7B7B7B; }
+.zscustom-section-tourism-footer .zplink-text:hover { color: #9E9E9E; }
+
+@media screen and (max-width: 767px) { .zscustom-footer-copyrights .zptext { text-align: center; } }
