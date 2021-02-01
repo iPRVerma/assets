@@ -1,0 +1,233 @@
+:root {
+    --dmp_style_background: #007CBA;
+
+    --dmp_style1_w: 85px;
+    --dmp_style1_h: 38px;
+    --dmp_style1_p: 7px;
+
+    --dmp_style2_w: 110px;
+    --dmp_style2_h: 30px;
+    --dmp_style2_p: 3px;
+}
+
+/*.dmp-toggle-container{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}*/
+
+
+/* First toggle btn completed */
+
+.toggle-btn-1
+{
+    position: relative;
+    width: var(--dmp_style1_w);
+    height: var(--dmp_style1_h);
+    margin: 0 auto;
+    border-radius: calc(var(--dmp_style1_h) / 2);
+}
+
+.toggle-btn-1 input[type="checkbox"]
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* First toggle btn */
+
+.toggle-btn-1 span
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+    opacity: 1;
+    background-color: var(--dmp_style_background);
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.0);
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+    border-radius: calc(var(--dmp_style1_h) / 2);
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+.toggle-btn-1 span:before, .toggle-btn-1 span:after
+{
+    content: '';
+    position: absolute;
+    top: var(--dmp_style1_p);
+    width: calc(var(--dmp_style1_h) - var(--dmp_style1_p) - var(--dmp_style1_p));
+    height: calc(var(--dmp_style1_h) - var(--dmp_style1_p) - var(--dmp_style1_p));
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+.toggle-btn-1 span:before
+{
+    background-color: var(--dmp_style_background);
+    transform: translate(calc(var(--dmp_style1_p) + var(--dmp_style1_p) - var(--dmp_style1_h)),0px);
+    z-index: 1;
+}
+
+.toggle-btn-1 span:after
+{
+    background-color: #fff;
+    transform: translate(var(--dmp_style1_p),0px);
+    z-index: 0;
+}
+
+.toggle-btn-1 input[type="checkbox"]:checked + span
+{
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.4);
+}
+
+.toggle-btn-1 input[type="checkbox"]:active + span
+{
+    opacity: 0.5;
+}
+
+.toggle-btn-1 input[type="checkbox"]:checked + span:before
+{
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.4);
+    transform: translate(calc(var(--dmp_style1_w) / 2), calc((var(--dmp_style1_p) + var(--dmp_style1_p) - var(--dmp_style1_h)) * 0.3));
+}
+
+.toggle-btn-1 input[type="checkbox"]:checked + span:after
+{
+    background-color: #fff;
+    transform: translate(calc(var(--dmp_style1_w) - var(--dmp_style1_p) - (var(--dmp_style1_h) - var(--dmp_style1_p) - var(--dmp_style1_p))),0px);
+}
+
+/* First toggle btn completed */
+
+
+
+
+/* Second toggle btn completed */
+
+.toggle-btn-2 {
+    position: relative;
+    display: inline-block;
+    width: var(--dmp_style2_w);
+    height: var(--dmp_style2_h);
+}
+
+.toggle-btn-2 input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+.toggle-btn-2 span.spleft {
+
+    font: initial;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    height: 100%;
+    width: calc((var(--dmp_style2_w)/2));
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+    color: #000;
+    transition: .4s;
+}
+
+.toggle-btn-2 span.spright {
+    font: initial;
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    height: 100%;
+    width: calc((var(--dmp_style2_w)/2));
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(calc(var(--dmp_style2_w) - (var(--dmp_style2_w)/2) ));
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+    color: #fff;
+    transition: .4s;
+}
+
+.toggle-btn-2 span.box {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dmp_style_background);
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.0);
+    -webkit-transition: .4s;
+    transition: .4s;
+    display: flex;
+    -webkit-align-items: center;
+    border-radius: calc((var(--dmp_style2_h)/2));
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.30);
+}
+
+.toggle-btn-2 span.box:before {
+    position: absolute;
+    content: "";
+    height: calc(var(--dmp_style2_h) - (var(--dmp_style2_p)*2));
+    width: calc((var(--dmp_style2_w)/2) - (var(--dmp_style2_p)*2));
+    top: var(--dmp_style2_p);
+    left: var(--dmp_style2_p);
+    bottom: var(--dmp_style2_p);
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    display: flex;
+    -webkit-align-items: center;
+    border-radius: calc((var(--dmp_style2_h)/2));
+}
+
+
+
+.toggle-btn-2 input:checked + span.box {
+    box-shadow:inset 0 0 0 99999px rgba(0,0,0,0.4);
+}
+
+
+.toggle-btn-2 input:checked + span.box:before {
+    -webkit-transform: translateX(calc(var(--dmp_style2_w) - (var(--dmp_style2_w)/2) ));
+    -ms-transform: translateX(calc(var(--dmp_style2_w) - (var(--dmp_style2_w)/2) ));
+    transform: translateX(calc(var(--dmp_style2_w) - (var(--dmp_style2_w)/2) ));
+}
+
+.toggle-btn-2 input:checked ~ span.spleft {
+    color: #fff;
+}
+
+.toggle-btn-2 input:checked ~ span.spright {
+    color: #000;
+}
+
+/* Second toggle btn completed */
